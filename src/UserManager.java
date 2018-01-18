@@ -1,4 +1,3 @@
-import javax.swing.JOptionPane;
 
 public class UserManager 
 {
@@ -11,24 +10,21 @@ public class UserManager
 		
 		public void showAllUser()
 		{
-			for(int i = 0; this.userlist[i]!=null && i< this.userlist.length ;  i++)
+			for(int i = 0;     this.userlist[i]!=null && i< this.userlist.length     ;  i++)  
 			{
 				userlist[i].showUserDetail();
 			}
 		}
 		
-		public void addNewUser()
+		public void addNewUser(String username)
 		{
-			String username;
 			for(int i =0; i< this.userlist.length ; i++)
 			{
 				if(this.userlist[i] == null)
 				{
-					username = JOptionPane.showInputDialog("Please Enter new user's username");
 					userlist[i] = new User(username);
 					break;
 				}
 			}
 		}
-
 }
