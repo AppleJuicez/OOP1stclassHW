@@ -1,3 +1,5 @@
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class RandomString {
 	
@@ -39,6 +41,19 @@ public class RandomString {
 				return true;
 		}
 		return false;
+	}
+	
+	public static String hashThis(String input , String Algo) throws NoSuchAlgorithmException
+	{
+		StringBuffer output = new StringBuffer();
+		MessageDigest md = MessageDigest.getInstance(Algo);
+		md.update(input.getBytes());
+		byte[] messageDigestedB = md.digest();
+		for(int i = 0; i < messageDigestedB.length ; i++)
+		{
+			output.append(String.format("%02x" , messageDigestedB[i] & 0xff));
+		}
+		return output.toString();
 	}
 
 }

@@ -2,7 +2,7 @@
 public class User 
 {
 	public String username;
-	private String password;
+	public String password;
 	
 	public User(String username)
 	{
@@ -12,6 +12,7 @@ public class User
 	
 	public void showUserDetail()
 	{
-		System.out.println("username = " + this.username + "\npassword = " + this.password);
+		System.out.println(	"\nusername = " + this.username + 
+							"\npassword = " + this.password);
 	}
 }

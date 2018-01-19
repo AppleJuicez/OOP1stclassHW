@@ -1,3 +1,4 @@
+import java.security.NoSuchAlgorithmException;
 
 public class UserManager 
 {
@@ -16,7 +17,7 @@ public class UserManager
 			}
 		}
 		
-		public void addNewUser(String username)
+		public void addNewUser(String username) throws NoSuchAlgorithmException
 		{
 			for(int i =0; i< this.userlist.length ; i++)
 			{
@@ -27,4 +28,20 @@ public class UserManager
 				}
 			}
 		}
+		
+		
+		public void addNewMember(String username , String user_status) throws NoSuchAlgorithmException
+		{
+			for(int i =0; i< this.userlist.length ; i++)
+			{
+				if(this.userlist[i] == null)
+				{
+					userlist[i] = new MemberUser(username,user_status);
+					break;
+				}
+			}
+			
+		}
+		
+
 }
